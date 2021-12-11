@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.gokimpark.recommendmovie.android.domain.model.MovieInfo" />
+
+        <variable name="movieInfo" type="MovieInfo" />
+        <variable name="throwable" type="Throwable" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        tools:context=".HomeActivity"
+        >
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/find_another_button"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/error_message"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{throwable.toString()}"
+                    />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.title}"
+                    />
+
+                <TextView
+                    android:id="@+id/subtitle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.subtitle}"
+                    />
+
+                <TextView
+                    android:id="@+id/publishedYear"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.publishedYear.toString()}"
+                    />
+
+                <TextView
+                    android:id="@+id/naver_movie_user_rating"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.naverMovieUserRating.toString()}"
+                    />
+
+                <TextView
+                    android:id="@+id/directors"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.directors.toString()}"
+                    />
+
+                <TextView
+                    android:id="@+id/actors"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.actors.toString()}"
+                    />
+
+                <TextView
+                    android:id="@+id/naver_movie_url"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="@{movieInfo.naverMovieUrl}"
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/find_another_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAllCaps="false"
+            android:text="@string/find_another"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
