@@ -34,6 +34,16 @@
                 android:orientation="vertical"
                 >
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/poster"
+                    android:maxHeight="200dp"
+                    app:imageUrl="@{movieInfo.imageUrl}"
+                    tools:src="@drawable/image_loading"
+                    />
+
                 <TextView
                     android:id="@+id/error_message"
                     android:layout_height="wrap_content"
